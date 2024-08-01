@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block metatitle %}
+    Liste des articles
+{% endblock %}
+
+
+{% block body %}
+
+    <h2>Liste des articles publiés</h2>
+    <ul>
+        {% for article in articles %}
+            {% if article.isPublished %}
+                <li>
+                    {{ article.title }}
+                    <a href="{{ path('show_article', {'id': article.id}) }}">Voir l'article</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+    <h2>Liste des articles non publiés</h2>
+    <ul>
+        {% for article in articles %}
+            {% if not article.isPublished %}
+                <li>
+                    L'article {{ article.title }} n'est pas encore publié
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+{% endblock %}
+
+
+

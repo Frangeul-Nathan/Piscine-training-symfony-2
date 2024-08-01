@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block metatitle %}
+    Détails des articles
+{% endblock %}
+
+{% block body %}
+    <h1>{{ article.title }}</h1>
+
+    <div class="article-description">
+        <h2>Description :</h2>
+        <p>{{ article.description }}</p>
+    </div>
+
+    <div class="article-content">
+        <h2>Contenu :</h2>
+        <p>{{ article.content }}</p>
+    </div>
+    <img src="{{ article.image }}" alt="{{ article.title }}">
+{% endblock %}
+

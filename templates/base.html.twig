@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block metatitle %}{% endblock %}</title>
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
+</head>
+<body>
+
+<header>
+
+    <h1>Mon super blog</h1>
+
+    <nav>
+        <ul>
+            <li> <a href="{{ path("home") }}">Home</a></li>
+            <li><a href="">Categorie</a></li>
+            <li><a href="{{ path("articles") }}">Article</a></li>
+        </ul>
+    </nav>
+</header>
+
+{% block body %}{% endblock %}
+
+<footer>
+    <p>	Lorem corp &#169;</p>
+</footer>
+
+
+</body>
+</html>
